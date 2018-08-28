@@ -20,9 +20,9 @@ let vimeoApp = (function(window){
                 <h2 class="card__title">${video.name}</h2>
                 <p class="card__description">${video.description && video.description.substr(0,150)}${ video.description && video.description.length > 150 ? "..." : "" }</p>
                 <ul class="card__metadata">
-                  <li>Plays: ${video.stats.plays}</li>
-                  <li>Comments: ${video.metadata.connections.comments.total}</li>
-                  <li>Likes: ${video.metadata.connections.likes.total}</li>
+                  <li><i class="fas fa-play"></i>  ${video.stats.plays}</li>
+                  <li><i class="fas fa-comment"></i>  ${video.metadata.connections.comments.total}</li>
+                  <li><i class="fas fa-heart"></i>  ${video.metadata.connections.likes.total}</li>
                 </ul>
               </div>
             </div>` 

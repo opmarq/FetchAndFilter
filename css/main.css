@@ -32,6 +32,7 @@ body {
   width: 100px;
   height: auto;
   float: left;
+  border: 2px solid #555555;
 }
 .card__content {
   width: calc(100% - 120px);
@@ -43,6 +44,8 @@ body {
 }
 .card__metadata li {
   display: inline;
+  font-size: 15px;
+  margin-right: 20px;
 }
 .card__title {
   margin-top: 0;
