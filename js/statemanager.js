@@ -4,6 +4,9 @@ let StateManagaer = function () {
 
   this.setState = function (state) {
     mainState = state
+    subscribers.forEach(function (callback) {
+      callback(state)
+    })
   }
 
   this.getState = function(){

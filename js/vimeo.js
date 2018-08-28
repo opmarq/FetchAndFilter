@@ -63,14 +63,14 @@ let vimeoApp = (function(window){
 
     bindEvents();
 
+    stateManagaer.subscribe(render)
+    
     stateManagaer.setState({
       filter: "omar",
       widthMoreLikes: false,
       maxResults: 10,
       page: 1
     })
-  
-    stateManagaer.subscribe(render)
   
   }
 
