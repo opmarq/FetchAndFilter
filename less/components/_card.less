@@ -1,0 +1,32 @@
+.card{
+  padding: 20px 15px;
+  border-top: 2px solid @main_color;
+  &:last-child{
+    border-bottom: 2px solid @main_color;
+  }
+  &__img{
+    width: 100px;
+    height: auto;
+    float: left;
+  }
+  &__content{
+    width: calc(100% - 120px);
+    float: right;
+  }
+  &__metadata{
+    margin: 0;
+    padding: 0;
+    li{
+      display: inline;
+    }
+  }
+  &__title{
+    margin-top: 0;
+    font-family: 'Archivo Narrow', sans-serif;
+  }
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
