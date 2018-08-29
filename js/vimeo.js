@@ -28,7 +28,8 @@ let vimeoApp = (function (window) {
     buttonFilter.addEventListener('click', function () {
       stateManager.updateState({
         ...stateManager.getState(),
-        filter: inputFilter.value
+        filter: inputFilter.value,
+        page: 0
       })
     })
 
@@ -37,14 +38,16 @@ let vimeoApp = (function (window) {
 
       stateManager.updateState({
         ...stateManager.getState(),
-        maxResults: selectedMax
+        maxResults: selectedMax,
+        page: 0
       })
     })
 
     inputMoreThan.addEventListener('change', function () {
       stateManager.updateState({
         ...stateManager.getState(),
-        widthMoreLikes: this.checked
+        widthMoreLikes: this.checked,
+        page: 0
       })
     })
 
@@ -123,10 +126,6 @@ let vimeoApp = (function (window) {
     }else{
       nextBtn.classList.remove("disabled");
     }
-
-    // console.log(Math.ceil(filtredResult.length / stateManager.getState().maxResults));
-    // console.log(stateManager.getState().page);
-
   }
 
   return {
