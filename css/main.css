@@ -287,3 +287,8 @@ body {
 .btn--nav:hover {
   opacity: 0.5;
 }
+.btn--nav.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
