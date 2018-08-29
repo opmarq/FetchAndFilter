@@ -1,3 +1,9 @@
+/*
+ * Created on Wed Aug 28 2018
+ *
+ * Copyright (c) Chajia Omar
+ */
+
 let StateManager = function () {
   let mainState;
   let subscribers = []
@@ -9,12 +15,16 @@ let StateManager = function () {
     })
   }
 
-  this.getState = function(){
+  this.getState = function () {
     return mainState;
   }
 
   this.subscribe = function (callback) {
-    subscribers.push(callback)
+    return subscribers.push(callback)
+  }
+
+  this.unsubscribe = function(index){
+    subscribers.splice(index,1);
   }
 
   this.updateState = function (state) {

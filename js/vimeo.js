@@ -1,4 +1,11 @@
+/*
+ * Created on Wed Aug 29 2018
+ *
+ * Copyright (c) 2018 Chajia Omar
+ */
+
 let vimeoApp = (function (window) {
+
   let stateManager = new StateManager()
   let inputFilter = document.querySelector('.js-input-filter')
   let buttonFilter = document.querySelector('.js-button-filter')
@@ -89,8 +96,6 @@ let vimeoApp = (function (window) {
           : true
       });
 
-      console.log(filtredResult.slice( stateManager.getState().page * stateManager.getState().maxResults , stateManager.getState().page * stateManager.getState().maxResults +  stateManager.getState().maxResults).length);
-
       container.innerHTML = filtredResult.slice( stateManager.getState().page * stateManager.getState().maxResults , stateManager.getState().page * stateManager.getState().maxResults +  stateManager.getState().maxResults)
       .map(video => {
         return `<div class="card">
@@ -131,4 +136,5 @@ let vimeoApp = (function (window) {
   return {
     init: init
   }
+
 })(window)
