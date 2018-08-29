@@ -34,8 +34,7 @@ let vimeoApp = (function (window) {
     })
 
     inputMaxResult.addEventListener('change', function () {
-      let selectedMax = inputMaxResult[inputMaxResult.selectedIndex].value
-
+      let selectedMax = parseInt(inputMaxResult[inputMaxResult.selectedIndex].value);
       stateManager.updateState({
         ...stateManager.getState(),
         maxResults: selectedMax,
@@ -73,6 +72,9 @@ let vimeoApp = (function (window) {
   }
 
   function render () {
+
+    console.log(stateManager.getState())
+
     filtredResult = vimeoData.data
       .filter(video => {
         return (
@@ -87,7 +89,9 @@ let vimeoApp = (function (window) {
           : true
       });
 
-      let rendredView = filtredResult.slice( stateManager.getState().page * stateManager.getState().maxResults , stateManager.getState().page * stateManager.getState().maxResults +  stateManager.getState().maxResults)
+      console.log(filtredResult.slice( stateManager.getState().page * stateManager.getState().maxResults , stateManager.getState().page * stateManager.getState().maxResults +  stateManager.getState().maxResults).length);
+
+      container.innerHTML = filtredResult.slice( stateManager.getState().page * stateManager.getState().maxResults , stateManager.getState().page * stateManager.getState().maxResults +  stateManager.getState().maxResults)
       .map(video => {
         return `<div class="card">
               <a href="${video.user.link}"><img src="${video.user.pictures.sizes[4].link}" alt="profile"
@@ -102,11 +106,7 @@ let vimeoApp = (function (window) {
                 </ul>
               </div>
             </div>`
-      })
-
-    container.innerHTML = rendredView.join('')
-
-    console.log(stateManager.getState())
+      }).join("");
 
     updateNavigationButtonsStatus();
 
