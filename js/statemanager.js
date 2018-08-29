@@ -1,4 +1,4 @@
-let StateManagaer = function () {
+let StateManager = function () {
   let mainState;
   let subscribers = []
 
