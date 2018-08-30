@@ -86,7 +86,7 @@ let vimeoApp = (function (window) {
       .filter(video => {
         return (
           (video.description &&
-            video.description.toLowerCase().includes(stateManager.getState().filter.toLowerCase())) ||
+            video.description.toLowerCase().includes(stateManager.getState().filter.toLowerCase().trim())) ||
           stateManager.getState().filter === ''
         )
       })
